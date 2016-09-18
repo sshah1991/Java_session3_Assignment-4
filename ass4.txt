@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class student {
+	String name;
+	static String result;
+	int rNumber;
+	float engMarks,hindiMarks,kanadaMarks;
+	
+	public static String results(float engMarks,float hindiMarks,float kanadaMarks){
+		if((engMarks+hindiMarks+kanadaMarks)/3<= 40){
+			result= "Fail";
+		}else if(engMarks<33 ||hindiMarks<33||kanadaMarks<33){
+			result="Pass";
+		}
+		return result;
+	}
+	
+	public static void main(String[] args) {
+		Scanner in= new Scanner(System.in);
+		float m1,m2,m3;
+		String result,name;
+		int roll;
+		student[] std = new student[3];
+		
+		for (int i = 0; i < 3; i++) {
+			System.out.println("Enter the student name");
+			name=in.nextLine();
+			System.out.println("Enter the student roll number");
+			roll=in.nextInt();
+			System.out.println("Enter marks in subject 1:");
+			m1=in.nextFloat();
+			System.out.println("Enter marks in subject 2:");
+			m2=in.nextFloat();
+			System.out.println("Enter marks in subject 3:");
+			m3=in.nextFloat();
+			result=results(m1,m2,m3);
+			System.out.println("STUDENT  "+name+"  having roll number  "+roll+"  is  "+result);
+		}		
+
+	}
+
+}
